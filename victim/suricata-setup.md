@@ -10,13 +10,18 @@ Version used: 7.0.3
 
 ## Configuration changes in suricata.yaml
 
-Set HOME_NET to the lab network:
+**HOME_NET** — tells Suricata what counts as your local network:
+
+```yaml
 HOME_NET: "[192.168.56.0/24]"
-Set interface to the host-only adapter:
+```
+
+**af-packet** — tells Suricata which interface to monitor:
+
+```yaml
 af-packet:
-
-  interface: enp0s8
-
+  - interface: enp0s8
+```
 ## Load community rules
 
 ```bash
