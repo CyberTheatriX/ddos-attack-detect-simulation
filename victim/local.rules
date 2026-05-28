@@ -1,0 +1,3 @@
+alert http any any -> $HOME_NET 80 (msg:"HTTP flood baseline threshold exceeded"; flow:to_server,established; threshold:type threshold, track by_src, count 100, seconds 10; classtype:attempted-dos; sid:9000001; rev:1;)
+
+alert http any any -> $HOME_NET 80 (msg:"HTTP flood high volume detected"; flow:to_server,established; threshold:type threshold, track by_src, count 500, seconds 5; classtype:attempted-dos; sid:9000002; rev:1;)
